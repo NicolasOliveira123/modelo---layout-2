@@ -1,0 +1,75 @@
+body, html{
+    background: #b8b8b8;
+    box-sizing: border-box;
+}
+
+
+.container{
+    margin: 0 auto;
+    width: 80vw;           /*-- vw = Largura visível  /  vh = Altura visível --*/
+    display: grid;
+    grid-template: 20vh 70vh 10vh/1fr 1fr 1fr;
+    grid-template-areas: "h h h" "m m a" "f f f";
+    row-gap: 2px;
+    column-gap: 2px;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    background: #e83fe8;
+    grid-area: h;
+    padding: 10px;
+    font-weight: 200;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    align-items: center;
+}
+
+li{
+    display: inline-block;
+    margin-left: 20px;
+}
+
+li a{
+    text-decoration: none;
+    color: #fff;
+}
+
+main{
+    background: #ffbfff;
+    grid-area: a;
+}
+
+aside{
+    background: #2274a5;
+    grid-area: m;
+}
+
+footer{
+    background: #8a648a;
+    grid-area: f;
+}
+
+@media screen and (max-width:1200px){
+    .container{
+    grid-template-areas: "h h h" "m m a" "f f f";
+    width: 100vh;
+    }
+}
+
+
+@media screen and (max-width:960px){
+    .container{
+    grid-template-areas: "h h h" "m m m" "a a a" "f f f";
+    width: 100vh;
+    }
+}
+
+@media screen and (max-width:640px){
+    .container{
+    grid-template-areas: "h h h" "m m m" "a a a" "f f f";
+    }
+    .aside{
+        display: none;
+    }
+}
